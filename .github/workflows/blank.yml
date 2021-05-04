@@ -32,20 +32,12 @@ jobs:
         fetch-depth: 5 # Danger needs a base ref      
 
 
-
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Run Python
-      run: |
-        python3 --version
         
     - uses: actions/setup-java@v2
       with:
         distribution: 'adopt' # See 'Supported distributions' for available options
         java-version: '11'
-    - run: java -cp java HelloWorldApp
+    - run: java --version
   
 #    - name: Build and push Docker images
 #      uses: docker/build-push-action@v2.4.0
